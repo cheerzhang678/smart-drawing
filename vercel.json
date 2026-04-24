@@ -1,15 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "*.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/prototype-smart-drawing.html"
+      "source": "/",
+      "destination": "/prototype-smart-drawing.html"
     }
   ]
 }
