@@ -599,7 +599,7 @@
         <div class="ratio-selector" onclick="toggleRatio('topRatioDD')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
           <span class="ratio-label" id="topRatioLabel">比例</span>
-          <svg class="arrow-icon" viewBox="0 0 12 12" width="10" height="10" fill="currentColor"><path d="M2 4l4 4 4-4z"/></svg>
+          <svg viewBox="0 0 12 12" width="10" height="10" fill="currentColor"><path d="M2 4l4 4 4-4z"/></svg>
           <div class="ratio-dropdown" id="topRatioDD"></div>
         </div>
         <div class="input-right-actions">
@@ -646,7 +646,7 @@
       <div class="ratio-selector" onclick="toggleRatio('btmRatioDD')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
         <span class="ratio-label" id="btmRatioLabel">比例</span>
-        <svg class="arrow-icon" viewBox="0 0 12 12" width="10" height="10" fill="currentColor"><path d="M2 4l4 4 4-4z"/></svg>
+        <svg viewBox="0 0 12 12" width="10" height="10" fill="currentColor"><path d="M2 4l4 4 4-4z"/></svg>
         <div class="ratio-dropdown" id="btmRatioDD"></div>
       </div>
       <div class="input-right-actions">
@@ -824,15 +824,8 @@ window.addEventListener('scroll', onScroll, { passive: true });
 function toggleRatio(id) {
   event.stopPropagation();
   const dd = document.getElementById(id);
-  const selector = dd.parentElement;
-  document.querySelectorAll('.ratio-dropdown').forEach(d => {
-    if (d.id !== id) {
-      d.classList.remove('open');
-      d.parentElement.classList.remove('open');
-    }
-  });
+  document.querySelectorAll('.ratio-dropdown').forEach(d => { if (d.id !== id) d.classList.remove('open'); });
   dd.classList.toggle('open');
-  selector.classList.toggle('open', dd.classList.contains('open'));
 }
 
 function selectRatio(el, ddId) {

@@ -824,15 +824,8 @@ window.addEventListener('scroll', onScroll, { passive: true });
 function toggleRatio(id) {
   event.stopPropagation();
   const dd = document.getElementById(id);
-  const selector = dd.parentElement;
-  document.querySelectorAll('.ratio-dropdown').forEach(d => {
-    if (d.id !== id) {
-      d.classList.remove('open');
-      d.parentElement.classList.remove('open');
-    }
-  });
+  document.querySelectorAll('.ratio-dropdown').forEach(d => { if (d.id !== id) d.classList.remove('open'); });
   dd.classList.toggle('open');
-  selector.classList.toggle('open', dd.classList.contains('open'));
 }
 
 function selectRatio(el, ddId) {
