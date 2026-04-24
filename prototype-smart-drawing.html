@@ -764,6 +764,7 @@ function generateCards() {
           <div class="card-bottom-row">
             <button class="make-same-btn" onclick="fillPrompt(event, '${card.prompt.replace(/'/g,"\\'")}')">
               <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4l5 5-11 11H4v-5L15 4z"/><path d="M12 7l5 5"/><circle cx="19" cy="5" r="1" fill="#fff" stroke="none"/><circle cx="21" cy="3" r=".6" fill="#fff" stroke="none"/><circle cx="21" cy="7" r=".6" fill="#fff" stroke="none"/></svg>
+              <span>做同款</span>
             </button>
           </div>
         </div>
@@ -854,7 +855,10 @@ function selectRatio(el, ddId) {
 }
 
 document.addEventListener('click', () => {
-  document.querySelectorAll('.ratio-dropdown').forEach(d => d.classList.remove('open'));
+  document.querySelectorAll('.ratio-dropdown').forEach(d => {
+    d.classList.remove('open');
+    d.parentElement.classList.remove('open');
+  });
 });
 
 // ===== Filter =====
